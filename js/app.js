@@ -35,81 +35,81 @@ let lima = new CookieStore('lima', 2, 16, 4.6);
 let place = ['Seattle', 'Tokyo', 'Dubai', 'paris', 'lima', 'total'];
 let cookitable = document.getElementById('table');
 
-// CookieStore.prototype.render = function () {
-//     this.cookie = 0;
-//     this.CookiesbyHour();
-//     const Row = document.createElement('tr');
-//     let tableDataElement = document.createElement('td');
-//     tableDataElement.textContent = this.locationName;
-//     Row.appendChild(tableDataElement);
-//     for (let i = 0; i < hours.length; i++) {
-//         tableDataElement = document.createElement('td');
-//         tableDataElement.textContent = this.cookiesbyHour[i];
-//         Row.appendChild(tableDataElement);
-//     }
-//     const tableHeader = document.createElement('th');
-//     cookitable.textContent = this.Cookie;
-//     Row.appendChild(tableHeader);
-//     cookitable.appendChild(Row);
-// };
-// function cookieTableHead() {
+CookieStore.prototype.render = function () {
+    this.cookie = 0;
+    this.CookiesbyHour();
+    const Row = document.createElement('tr');
+    let tableDataElement = document.createElement('td');
+    tableDataElement.textContent = this.locationName;
+    Row.appendChild(tableDataElement);
+    for (let i = 0; i < hours.length; i++) {
+        tableDataElement = document.createElement('td');
+        tableDataElement.textContent = this.cookiesbyHour[i];
+        Row.appendChild(tableDataElement);
+    }
+    const tableHeader = document.createElement('th');
+    cookitable.textContent = this.Cookie;
+    Row.appendChild(tableHeader);
+    cookitable.appendChild(Row);
+};
+function cookieTableHead() {
 
-//     let thead = document.createElement('thead');
-//     let empatythead = document.createElement('th');
-//     thead.appendChild(empatythead);
+    let thead = document.createElement('thead');
+    let empatythead = document.createElement('th');
+    thead.appendChild(empatythead);
 
-//     for (let k = 0; k < 15; k++) {
-//         let th = document.createElement('th');
-//         th.innerText = hour[k];
-//         thead.appendChild(th);
-//         cookitable.appendChild(thead);
-
-
-//     }
-
-// };
-// (function cookietablecell() {
-
-//     for (let i = 0; i < 6; i++) {
-//         let tr = document.createElement('tr');
-//         let td = document.createElement('td');
-//         td.innerText = place[i];
-//         tr.appendChild(td);
-//         cookitable.appendChild(tr)
-
-//     }
-
-// })();
-// function cookieFooterRow() {
-//     const cookitable = document.createElement('tr');
-//     let Header = document.createElement('th');
-//     Header.textContent = ' Totals for All Locations';
-//     cookitable.appendChild(Header);
-//     let totalOfTotals = 0;
-//     for (let i = 0; i < hour.length; i++) {
-//         let hoTotal = 0;
-//         for (let k = 0; k < place.length; k++) {
-//             hTotal += place[k].number[i];
-//             totalOfTotals += hourlyTotal;
-//         }
-//         Header = document.createElement('th');
-//         Header.textContent = hTotal;
-//         Row.appendChild(Header);
-//     }
-//     tableHeader = document.createElement('th');
-//     tableHeader.textContent = totalOfTotals;
-//     Row.appendChild(tableHeader);
-//     cookitable.appendChild(Row);
-// };
+    for (let k = 0; k < 15; k++) {
+        let th = document.createElement('th');
+        th.innerText = hour[k];
+        thead.appendChild(th);
+        cookitable.appendChild(thead);
 
 
-// (function renderTable() {
-//     cookieTableHead();
-//     for (let i = 0; i < place.length; i++) {
-//         location[i].render();
-//     }
-//     cookieFooterRow();
-// })();
+    }
+
+};
+(function cookietablecell() {
+
+    for (let i = 0; i < 6; i++) {
+        let tr = document.createElement('tr');
+        let td = document.createElement('td');
+        td.innerText = place[i];
+        tr.appendChild(td);
+        cookitable.appendChild(tr)
+
+    }
+
+})();
+function cookieFooterRow() {
+    const cookitable = document.createElement('tr');
+    let Header = document.createElement('th');
+    Header.textContent = ' Totals for All Locations';
+    cookitable.appendChild(Header);
+    let totalOfTotals = 0;
+    for (let i = 0; i < hour.length; i++) {
+        let hoTotal = 0;
+        for (let k = 0; k < place.length; k++) {
+            hTotal += place[k].number[i];
+            totalOfTotals += hourlyTotal;
+        }
+        Header = document.createElement('th');
+        Header.textContent = hTotal;
+        Row.appendChild(Header);
+    }
+    tableHeader = document.createElement('th');
+    tableHeader.textContent = totalOfTotals;
+    Row.appendChild(tableHeader);
+    cookitable.appendChild(Row);
+};
+
+
+(function renderTable() {
+    cookieTableHead();
+    for (let i = 0; i < place.length; i++) {
+        location[i].render();
+    }
+    cookieFooterRow();
+})();
 
 let form=document.getElementById('cookienewloction');
 let mincast=document.getElementById('mincast');
