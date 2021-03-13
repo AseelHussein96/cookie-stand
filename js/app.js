@@ -31,18 +31,17 @@ let Tokyo = new CookieStore('Tokyo', 3, 65, 1.2);
 let Dubai = new CookieStore('Dubai', 11, 38, 3.7);
 let paris = new CookieStore('paris', 20, 38, 2.3);
 let lima = new CookieStore('lima', 2, 16, 4.6);
-
 let place = ['Seattle', 'Tokyo', 'Dubai', 'paris', 'lima', 'total'];
 let cookitable = document.getElementById('table');
 
-CookieStore.prototype.render = function () {
+CookieStore.prototype.render =function () {
     this.cookie = 0;
     this.CookiesbyHour();
     const Row = document.createElement('tr');
     let tableDataElement = document.createElement('td');
-    tableDataElement.textContent = this.locationName;
+    tableDataElement.textContent = this.location;
     Row.appendChild(tableDataElement);
-    for (let i = 0; i < hours.length; i++) {
+    for (let i = 0; i < hour.length; i++) {
         tableDataElement = document.createElement('td');
         tableDataElement.textContent = this.cookiesbyHour[i];
         Row.appendChild(tableDataElement);
@@ -52,6 +51,7 @@ CookieStore.prototype.render = function () {
     Row.appendChild(tableHeader);
     cookitable.appendChild(Row);
 };
+
 function cookieTableHead() {
 
     let thead = document.createElement('thead');
@@ -85,12 +85,12 @@ function cookieFooterRow() {
     let Header = document.createElement('th');
     Header.textContent = ' Totals for All Locations';
     cookitable.appendChild(Header);
-    let totalOfTotals = 0;
+    let Totals = 0;
     for (let i = 0; i < hour.length; i++) {
         let hoTotal = 0;
         for (let k = 0; k < place.length; k++) {
             hTotal += place[k].number[i];
-            totalOfTotals += hourlyTotal;
+            Totals += hourlyTotal;
         }
         Header = document.createElement('th');
         Header.textContent = hTotal;
@@ -120,9 +120,7 @@ let sumbit=document.getElementById('sumbit');
 
 let i = 0;
 let text = [];
-let daily = 0;
-
-let hour = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+let daily = 0;;
 form.addEventListener('sumbit',function(event){
     event.preventDefault();
     let random = Math.ceil((Math.random() * (maxcast - mincast + 1)) + mincast);
