@@ -3,6 +3,7 @@
   font-family: "Audiowide", sans-serif;
  
  
+<<<<<<< HEAD
 }
 ul {
   list-style-type: none;
@@ -76,3 +77,19 @@ li a:hover {
  li text {
    text-align: right;
  }
+=======
+  #main {
+margin-top: 20px;
+    color: black;
+    border-style:double;
+    border-color: rgb(80, 235, 255);
+    background-color: lightblue;
+    
+    text-size-adjust: 50px;
+    font-style:oblique;
+}
+img {
+    margin-top: 100px;
+   margin-left: 300px;
+}
+>>>>>>> d19816eaa1b31628c3d791402ea793c3d5dd80a2
